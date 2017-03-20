@@ -1,0 +1,19 @@
+.imgItem {
+
+  width: 100%;
+}
+
+.resultList {
+
+}
+
+.item{
+  width: 95px;
+  min-height: 130px;
+  display: inline-block;
+  margin: 5px;
+
+  vertical-align: bottom;
+
+  border: 1px dashed #E0E0E0;
+}
