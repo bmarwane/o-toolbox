@@ -5,8 +5,16 @@ import {connect} from 'react-redux';
 import * as actions from '../actions/config';
 
 import Configuration from '../components/Configuration/Page';
+import { hashHistory } from 'react-router';
+
 
 export class ConfigurationPage extends Component {
+
+  componentDidUpdate() {
+    if(this.props.saved){
+      hashHistory.push('/');
+    }
+  }
   render() {
     return (
       <Configuration {...this.props} />
