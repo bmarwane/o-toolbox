@@ -78,6 +78,6 @@ app.on('ready', async () => {
 ipcMain.on('ondragstart', (event, filePath) => {
   event.sender.startDrag({
     file: filePath,
-    icon: ''
+    icon: __dirname + '/dist/drop.png'
   })
-})
+});
