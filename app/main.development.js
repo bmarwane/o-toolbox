@@ -1,8 +1,8 @@
 // @flow
-import { app, BrowserWindow } from 'electron';
+import { app, BrowserWindow, ipcMain } from 'electron';
 import MenuBuilder from './menu';
 
-let mainWindow = null;
+export let mainWindow = null;
 
 if (process.env.NODE_ENV === 'production') {
   const sourceMapSupport = require('source-map-support'); // eslint-disable-line
@@ -74,3 +74,10 @@ app.on('ready', async () => {
   //*/
   mainWindow.setAlwaysOnTop(true)
 });
+
+ipcMain.on('ondragstart', (event, filePath) => {
+  event.sender.startDrag({
+    file: filePath,
+    icon: ''
+  })
+})

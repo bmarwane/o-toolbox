@@ -1,6 +1,6 @@
 import React from 'react'
 import styles from './SearchResult.css';
-
+import ImageItem from './ImageItem'
 
 export default class SearchResult extends React.Component {
 
@@ -21,7 +21,8 @@ export default class SearchResult extends React.Component {
     return (
       <div className={styles.resultList}>
         {this.getImages().map((image, index) => <div className={styles.item}>
-          <img className={styles.imgItem} src={image.get('path')} key={image.get('path')}/>
+          <ImageItem path={image.get('path')} />
+
         </div>)}
       </div>
     )
